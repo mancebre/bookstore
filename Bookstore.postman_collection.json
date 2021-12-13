@@ -113,6 +113,47 @@
 			"response": []
 		},
 		{
+			"name": "Author Store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNGU4ZGUwNjI4YzNhNDNjM2I0OGJjOWFlNjUzYmYyZTJkN2MwMGI0NDVhMjg5ZmYyZGUwNGNmMGU2ZjJmYzVkMmFiM2UxMThlMTY2MTVkNDciLCJpYXQiOjE2MzcxNjM5NDQuODkwOTg0LCJuYmYiOjE2MzcxNjM5NDQuODkwOTg2LCJleHAiOjE2Njg2OTk5NDQuODg3NDQzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.rXhjZS3IE0wXI7hNFyuGSoIsauuHBRIwVYGGIlT_jyfMM_lGn8vb9mT3k_8s7kdZyrVp2J0r308jHCkShDo3zCbD5BNYivcs_QSpmVW8EZtA-IuU9M3IwAkzPZjy1B7SKMV4YDaY0dj_vG2SzrFO7uEpJkeXCcQBuv2Jf2HAychgAvb-pz-YiIYDcNTfw5QdsegGpbIKReU3S_s3k2Nf0_RiGh1y2s3kfMXZCEWs4DGYAy9KRNQTVOur8AlokCeGZENn4uj_yXetRNa5uqdzD23pfTDV6m8910T6yQFBdInmaoFaDXY5YhP-AOp0tmmEdEwOB1E5nhMdSU7pjW7m68KLcxLW7yZEmW9cLe1mLiEkdYDfnTSAPERv5iBxd77RxisFSOdb6k7Gq3BlyNI2BlLS-Lx_IYIidmcf-L6qF2OX9Tg37cvJWch0Wqze99M4k9R5to3H7MPdyrQFQwWURyOl0qyu5rAUWhJdp1Cexyw3Dm-4J90YEnrWMrGJpzsmZr23XdJrvK3w1gtn8cL30Ldw-2C6XU01ZfHyiUBn1M6Gm61zgtwhqhB8Mgxoo2IIPxOc_B1hCofVeNmUoq1hfJEXIEBgdQoW5L33sTJjpqBb7ngf9EDmAx7TyuOo74HNISAcNG0P6N6d224iFHYmQvQaZoy_icE1umYC8dHWy18",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/authors?name=Mosa Pucko",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"authors"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Mosa Pucko"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Book Store",
 			"request": {
 				"method": "POST",
@@ -162,7 +203,7 @@
 			"response": []
 		},
 		{
-			"name": "Author Store",
+			"name": "Book Author Store",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -178,7 +219,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/v1/authors?name=Mosa Pucko",
+					"raw": "http://127.0.0.1:8000/api/v1/books?name=My New Book&description=e32e23e&publication_year=2020",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -190,12 +231,20 @@
 					"path": [
 						"api",
 						"v1",
-						"authors"
+						"books"
 					],
 					"query": [
 						{
 							"key": "name",
-							"value": "Mosa Pucko"
+							"value": "My New Book"
+						},
+						{
+							"key": "description",
+							"value": "e32e23e"
+						},
+						{
+							"key": "publication_year",
+							"value": "2020"
 						}
 					]
 				}
@@ -495,6 +544,42 @@
 					"path": [
 						"oauth",
 						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Author Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNzZkMGM0MTIwZjU2MGIzMzY0ZmVjYzBhMDExODY3YzdkNDQzNzg2NjhhODM2ZWIwMjcwOTgxNGUzMDU3YTZiOGFmNWU0OTZjZDZlMTkxMDciLCJpYXQiOjE2MzkzODM5OTMuMDAwMzE5LCJuYmYiOjE2MzkzODM5OTMuMDAwMzIxLCJleHAiOjE2NzA5MTk5OTIuOTk0MTc2LCJzdWIiOiIxMyIsInNjb3BlcyI6W119.sZizgo89TQdSIDcQoybohlc2oc6ru7u8AvPtD4-kzAezuV7toYujzLo_zPfe1BdzsX0SAQGUujD1kSxUb8bqWYgioYsngybRoZFiuVTWeD9difBX5HPxE8l2GS4wYg2JDyEafb3O6TmPbtvQDDf_IYUSTZytFvPdkyJ2ist-GkB4Dl9PLCVg5x3zJNeJbvXQa_7MScanjmFt2mmj1iMo0rlOFMy75nRswMStgezdWBy6KXaVd44VQmfKASCQnaHyIClgri60i9rKusGEPQUcC4wB-rotL7k3bIDVsZYVyYAbHcmwG0Kfnrtk0XPVaCzyVdjXbUAvj5WqGi1B5wALthYiEk0xedOxlG8XYzznmZBwt09qsIhjkbORBFUX5gOwqJ2n6pntfP-J21uop3N1LjBs16_ZwWCkk_eIZjYVXqiZZsEWM1aLN6VscbYS7y4e-PN1k0p0Uvpu2JkA_scbTrpFiwSPX1AV7MIHaLMniZ0ekCytC6BDLDft1oj-BSYAfzSAUupkm7WlY8K7s0K873Ih2-v9tPlnNs0swrALGIcRzU5dU05bgQPlHSMgP6VH7ma-QglppDwkZT103QCxXTVZ7nFXacG78Al7dmu144ixEa7AxKC3UT9-0T-zjLhjnJ7C6P2kFC6YSQC647G87m-kWs8EsUA4DMv6gAEuAZY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/book_author/302",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"book_author",
+						"302"
 					]
 				}
 			},

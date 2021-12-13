@@ -13,7 +13,7 @@ class StoreBookAuthorRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreBookAuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'author_id' => 'integer|min:1|exists:App\Models\Author,id',
+            'book_id' => 'integer|min:1|exists:App\Models\Book,id',
         ];
     }
 }
